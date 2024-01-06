@@ -62,7 +62,7 @@ contract ManualToken {
 
   //Sets allowance for other addresses
   function approve(address sender, uint256 value) public returns(bool success){
-    allowance[msg.sender][sender];
+    allowance[msg.sender][sender] = value;
     emit Approval(msg.sender, sender, value);
     return true;
   }
