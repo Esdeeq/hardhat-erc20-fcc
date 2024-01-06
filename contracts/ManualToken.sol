@@ -40,6 +40,7 @@ contract ManualToken {
     require(balanceOf[_to] + _value >= balanceOf[_to]);
     uint256 previousBalance = balanceOf[_from] + balanceOf[_to];
     balanceOf[_from] -= _value;
+    balanceOf[_to] += _value;   
     emit Transfer(_from, _to, _value);
     assert(balanceOf[_from] + balanceOf[_to] == previousBalance);
   }
